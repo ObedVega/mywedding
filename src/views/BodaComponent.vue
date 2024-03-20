@@ -4,8 +4,8 @@
         <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
         <div class="w3-display-middle w3-text-white w3-center">
             <h1 class="w3-jumbo">{{novia}} &amp; {{novio}}</h1>
-            <h2>Estan por casarse</h2>
-            <h2><b>17.07.2017</b></h2>
+            <h2>{{texto}}</h2>
+            <h2><b>{{fecha}}</b></h2>
         </div>
         </header>
         <!-- Navbar (sticky bottom) -->
@@ -33,26 +33,26 @@
     <!-- Background photo -->
     <div class="w3-display-container bgimg2">
       <div class="w3-display-middle w3-text-white w3-center">
-        <h1 class="w3-jumbo">You Are Invited</h1><br>
-        <h2>Of course..</h2>
+        <h1 class="w3-jumbo">Estas Invitado</h1><br>
+        <h2>Su presencia y compañía siempre será nuestro mejor regalo. Sin embargo, si desean obsequiarnos algo más, pueden hacerlo de manera monetaria.</h2>
       </div>
     </div>
     
     <!-- Wedding information -->
     <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
       <div class="w3-content">
-        <h1 class="w3-text-grey"><b>THE WEDDING</b></h1>
+        <h1 class="w3-text-grey"><b>LA BODA</b></h1>
         <img class="w3-round-large w3-grayscale-min" src="@/assets/img/wedding_location.jpg" style="width:100%;margin:64px 0">
         <div class="w3-row">
           <div class="w3-half">
-            <h2>When</h2>
-            <p>Wedding Ceremony - 2:00pm</p>
-            <p>Reception &amp; Dinner - 5:00pm</p>
+            <h2>Cuando</h2>
+            <p>Ceremonia - 2:00pm</p>
+            <p>Recepcion &amp; Cena - 5:00pm</p>
           </div>
           <div class="w3-half">
-            <h2>Where</h2>
-            <p>Some place, an address</p>
-            <p>Some where, some address</p>
+            <h2>Donde</h2>
+            <p>{{direccion}}</p>
+            <a href="https://maps.app.goo.gl/wmi7rnbxwmCYpzzL8">Ubicacion</a>
           </div>
         </div>
       </div>
@@ -60,8 +60,8 @@
     
     <!-- RSVP section -->
     <div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide" id="rsvp">
-      <h1>HOPE YOU CAN MAKE IT!</h1>
-      <p class="w3-large">Kindly Respond By January, 2017</p>
+      <h1>Esperamos nos puedas acompañar!</h1>
+      <p class="w3-large">Por favor responde antes de Agosto, 2024</p>
       <p class="w3-xlarge">
         <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
       </p>
@@ -97,21 +97,49 @@
 
 </template>
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
         novia: '',
-        novio: ''
+        novio: '',
+        texto: '',
+        direccion: '',
+        fecha: ''
         };
     },
     mounted() {
+          this.fetchData();
     // Accediendo al parámetro 'names' de la ruta
-    const names = this.$route.params.names;
-    const [novia, novio] = names.split('y');
-    this.novia = novia.trim();
-    this.novio = novio.trim();
-    console.log('Novia:', this.novia);
-    console.log('Novio:', this.novio);
+  //  const names = this.$route.params.names;
+  //  const [novia, novio] = names.split('y');
+  //  this.novia = novia.trim();
+  //  this.novio = novio.trim();
+  //  console.log('Names:', this.names);
+  //  console.log('Novio:', this.novio);
+    },
+    methods: {
+    async fetchData() {
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1'); 
+        const data = response.data;
+       // this.novio = data.novio;
+       // this.novia = data.novia;
+       // this.texto = data.texto;
+       // this.direccion = data.direccion;
+       // this.fecha = data.fecha;
+        this.novio = 'David';
+        this.novia = 'Ana';
+        this.texto = 'Estan por casarse';
+        this.direccion = 'Blvrd Federico Benítez López 12429, Fraccionamiento, 22104 Tijuana, B.C.';
+        this.fecha = '17.07.2017';
+
+
+       console.log('Data:', data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
   }
 };
 </script>
