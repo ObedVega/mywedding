@@ -122,14 +122,14 @@ export default {
         const response = await axios.get(`https://mywedding-backend.onrender.com/boda/${this.names}`); 
       //  const data = response.data;
         const data = response;
-        this.novio = data.novio;
-        this.novia = data.novia;
+        this.novio = data.data.nombreNovio;
+        this.novia = data.data.nombreNovia;
         this.texto = data.texto;
         this.direccion = data.direccion;
         this.fecha = data.fecha;
     
         console.log(data.novio);
-       console.log('Data:', data);
+       console.log('Data:', data.data);
       } catch (error) {
         if (error.response.status === 404) {
           this.$router.push({ name: 'error404' }); 
