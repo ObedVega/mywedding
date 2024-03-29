@@ -131,7 +131,11 @@ export default {
         console.log(data.novio);
        console.log('Data:', data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        if (error.response.status === 404) {
+          this.$router.push({ name: 'error404' }); 
+        } else {
+          console.error('Error:', error);
+        }
       }
     }
   }
