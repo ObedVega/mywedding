@@ -123,7 +123,8 @@ export default {
     async fetchData() {
       try {
         const response = await axios.get(`https://mywedding-backend.onrender.com/boda/${names}`); 
-        const data = response.data;
+      //  const data = response.data;
+        const data = response;
        // this.novio = data.novio;
        // this.novia = data.novia;
        // this.texto = data.texto;
