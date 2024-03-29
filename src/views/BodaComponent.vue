@@ -111,11 +111,11 @@ export default {
     mounted() {
           this.fetchData();
     // Accediendo al parámetro 'names' de la ruta
-  //  const names = this.$route.params.names;
+    const names = this.$route.params.names;
   //  const [novia, novio] = names.split('y');
   //  this.novia = novia.trim();
   //  this.novio = novio.trim();
-  //  console.log('Names:', this.names);
+    console.log('Names:', this.names);
   //  console.log('Novio:', this.novio);
     },
     methods: {
