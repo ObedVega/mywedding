@@ -105,7 +105,8 @@ export default {
         novio: '',
         texto: '',
         direccion: '',
-        fecha: ''
+        fecha: '',
+      //  names:''
         };
     },
     mounted() {
@@ -115,7 +116,7 @@ export default {
   //  const [novia, novio] = names.split('y');
   //  this.novia = novia.trim();
   //  this.novio = novio.trim();
-    console.log('Names:', this.names);
+    console.log('Names:', names);
   //  console.log('Novio:', this.novio);
     },
     methods: {
