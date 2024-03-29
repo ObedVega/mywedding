@@ -127,11 +127,11 @@ export default {
        // this.texto = data.texto;
        // this.direccion = data.direccion;
        // this.fecha = data.fecha;
-        this.novio = 'David';
-        this.novia = 'Ana';
+      //  this.novio = 'David';
+      //  this.novia = 'Ana';
         this.texto = 'Estan por casarse';
-        this.direccion = 'Blvrd Federico Benítez López 12429, Fraccionamiento, 22104 Tijuana, B.C.';
-        this.fecha = '17.07.2017';
+      //  this.direccion = 'Blvrd Federico Benítez López 12429, Fraccionamiento, 22104 Tijuana, B.C.';
+      //  this.fecha = '17.07.2017';
 
 
        console.log('Data:', data);
