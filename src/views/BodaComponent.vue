@@ -122,7 +122,7 @@ export default {
     methods: {
     async fetchData() {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1'); 
+        const response = await axios.get(`https://mywedding-backend.onrender.com/boda/${names}`); 
         const data = response.data;
        // this.novio = data.novio;
        // this.novia = data.novia;
