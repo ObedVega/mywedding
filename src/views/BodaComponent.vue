@@ -128,7 +128,7 @@ export default {
         this.direccion = data.direccion;
         this.fecha = data.fecha;
     
-
+        console.log(data.novio);
        console.log('Data:', data);
       } catch (error) {
         console.error('Error fetching data:', error);
