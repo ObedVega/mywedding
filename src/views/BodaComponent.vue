@@ -122,6 +122,7 @@ export default {
     methods: {
     async fetchData() {
       try {
+        console.log(`https://mywedding-backend.onrender.com/boda/${this.names}`);
         const response = await axios.get(`https://mywedding-backend.onrender.com/boda/${this.names}`); 
       //  const data = response.data;
         const data = response;
