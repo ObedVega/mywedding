@@ -122,17 +122,12 @@ export default {
         const response = await axios.get(`https://mywedding-backend.onrender.com/boda/${this.names}`); 
       //  const data = response.data;
         const data = response;
-       // this.novio = data.novio;
-       // this.novia = data.novia;
-       // this.texto = data.texto;
-       // this.direccion = data.direccion;
-       // this.fecha = data.fecha;
-      //  this.novio = 'David';
-      //  this.novia = 'Ana';
-        this.texto = 'Estan por casarse';
-      //  this.direccion = 'Blvrd Federico Benítez López 12429, Fraccionamiento, 22104 Tijuana, B.C.';
-      //  this.fecha = '17.07.2017';
-
+        this.novio = data.novio;
+        this.novia = data.novia;
+        this.texto = data.texto;
+        this.direccion = data.direccion;
+        this.fecha = data.fecha;
+    
 
        console.log('Data:', data);
       } catch (error) {
