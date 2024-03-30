@@ -5,7 +5,7 @@ import ErrorPage from './views/ErrorPage.vue';
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/w/:names', component: Boda },
+  { path: '/:names', component: Boda },
   { path: '/error404', component: ErrorPage}
 ];
 
